@@ -1,0 +1,303 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>یسنا دهقانی | عکاس</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <header class="site-header">
+
+    <div class="logo">YASNA</div>
+
+    <nav id="mainMenu">
+        <a href="index.html">خانه</a>
+        <a href="portfolio.html">نمونه‌کارها</a>
+        <a href="about.html">درباره من</a>
+        <a href="contact.html">تماس</a>
+    </nav>
+
+    <button class="menu-toggle" onclick="openMenu()" aria-label="باز کردن منو">
+        <span></span>
+        <span></span>
+        <span></span>
+    </button>
+
+</header>
+
+<div class="menu-overlay" id="menuOverlay" onclick="closeMenu()"></div>
+
+<aside class="side-panel" id="sidePanel">
+
+    <div class="editorial-top">
+        <span>INDEPENDENT PHOTOGRAPHY</span>
+        <span>VOL. 01 — YASNA</span>
+    </div>
+
+    <button class="close-menu" onclick="closeMenu()">×</button>
+
+    <div class="editorial-title">
+        <span class="title-number">THE VISUAL ARCHIVE</span>
+        <h2>Beyond<br>the <i>frame.</i></h2>
+        <div class="title-line"></div>
+        <p>AN EYE FOR THE UNSEEN.</p>
+    </div>
+
+    <div class="editorial-nav-title">
+        <span>INDEX</span>
+        <span>CONTENTS / 04</span>
+    </div>
+
+    <div class="panel-links">
+        <a href="index.html">
+            <span class="link-number">01</span>
+            <span class="link-name">خانه</span>
+            <span class="link-arrow">↗</span>
+        </a>
+
+        <a href="portfolio.html">
+            <span class="link-number">02</span>
+            <span class="link-name">تمام نمونه‌کارها</span>
+            <span class="link-arrow">↗</span>
+        </a>
+
+        <a href="about.html">
+            <span class="link-number">03</span>
+            <span class="link-name">درباره من</span>
+            <span class="link-arrow">↗</span>
+        </a>
+
+        <a href="contact.html">
+            <span class="link-number">04</span>
+            <span class="link-name">تماس</span>
+            <span class="link-arrow">↗</span>
+        </a>
+    </div>
+
+    <div class="editorial-bottom">
+        <span>PHOTOGRAPHY · ART · STORIES</span>
+        <span>CAPTURED BY YASNA</span>
+    </div>
+
+</aside>
+
+
+    <main>
+
+<style>
+.live-clock {
+    direction: ltr;
+    text-align: center;
+    padding: 25px 15px;
+    margin: 15px auto 30px;
+    max-width: 340px;
+    color: #222;
+    font-family: Georgia, "Times New Roman", serif;
+}
+
+.live-clock .clock-label {
+    font-family: Arial, sans-serif;
+    font-size: 9px;
+    letter-spacing: 5px;
+    color: #999;
+    margin-bottom: 14px;
+}
+
+.live-clock .clock-time {
+    font-size: 38px;
+    font-weight: normal;
+    letter-spacing: 3px;
+    font-variant-numeric: tabular-nums;
+    margin-bottom: 12px;
+}
+
+.live-clock .clock-date {
+    font-family: Georgia, "Times New Roman", serif;
+    font-size: 12px;
+    letter-spacing: 1px;
+    color: #777;
+}
+
+.live-clock .clock-line {
+    width: 35px;
+    height: 1px;
+    background: #c8bda9;
+    margin: 17px auto 0;
+}
+</style>
+
+<div class="live-clock">
+    <div class="clock-label">LOCAL TIME</div>
+    <div class="clock-time" id="liveTime">00:00:00</div>
+    <div class="clock-date" id="liveDate">Loading date...</div>
+    <div class="clock-line"></div>
+</div>
+
+<script>
+function updateLiveClock() {
+    const now = new Date();
+
+    document.getElementById("liveTime").textContent =
+        new Intl.DateTimeFormat("en-GB", {
+            hour: "2-digit",
+            minute: "2-digit",
+            second: "2-digit",
+            hourCycle: "h23"
+        }).format(now);
+
+    document.getElementById("liveDate").textContent =
+        new Intl.DateTimeFormat("en-US-u-ca-persian", {
+            weekday: "long",
+            day: "numeric",
+            month: "long",
+            year: "numeric"
+        }).format(now);
+}
+
+updateLiveClock();
+setInterval(updateLiveClock, 1000);
+</script>
+<section class="hero">
+
+            <p class="small-title">YASNA DEHGHANI — PHOTOGRAPHY</p>
+
+            <h1>
+                لحظه‌ها را
+                <br>
+                از زاویه‌ای دیگر ببین.
+            </h1>
+
+            <p class="intro">
+                مجموعه‌ای از پرتره‌ها، پروژه‌ها و قاب‌هایی
+                که بخشی از نگاه من به دنیای تصویر هستند.
+            </p>
+
+            <a class="button" href="portfolio.html">
+                مشاهده نمونه‌کارها
+                <span>←</span>
+            </a>
+
+        </section>
+
+
+        <section class="featured">
+
+            <div class="section-title">
+                <span>01</span>
+                <h2>نمونه‌کارهای منتخب</h2>
+            </div>
+
+            <div class="categories">
+
+                <a href="portrait.html" class="category">
+                    <div class="category-image"></div>
+                    <div class="category-info">
+                        <span>01</span>
+                        <h3>پرتره</h3>
+                        <p>Portrait</p>
+                    </div>
+                </a>
+
+                <a href="fashion.html" class="category">
+                    <div class="category-image"></div>
+                    <div class="category-info">
+                        <span>02</span>
+                        <h3>فشن</h3>
+                        <p>Fashion</p>
+                    </div>
+                </a>
+
+                <a href="children.html" class="category">
+                    <div class="category-image"></div>
+                    <div class="category-info">
+                        <span>03</span>
+                        <h3>کودک</h3>
+                        <p>Children</p>
+                    </div>
+                </a>
+
+                <a href="product.html" class="category">
+                    <div class="category-image"></div>
+                    <div class="category-info">
+                        <span>04</span>
+                        <h3>محصول</h3>
+                        <p>Product</p>
+                    </div>
+                </a>
+
+            </div>
+
+        </section>
+
+
+        <section class="about-preview">
+
+            <span>02 — ABOUT</span>
+
+            <h2>
+                هر عکس،
+                <br>
+                یک روایت دارد.
+            </h2>
+
+            <p>
+                من یسنا هستم؛ عکاس و دانش‌آموز رشته فتوگرافیک.
+                اینجا جاییه برای ثبت نگاه من به آدم‌ها،
+                جزئیات و لحظه‌هایی که ارزش ماندن دارن.
+            </p>
+
+            <a href="about.html">بیشتر درباره من ←</a>
+
+        </section>
+
+
+        <section class="instagram">
+
+            <span>03 — INSTAGRAM</span>
+
+            <h2>بیشتر از من و کارهام ببین</h2>
+
+            <p>
+                برای دیدن عکس‌ها و پروژه‌های جدید،
+                من رو در اینستاگرام دنبال کن.
+            </p>
+
+            <a href="https://www.instagram.com/y4sna.photography/" target="_blank" rel="noopener noreferrer">
+    Instagram
+</a>
+
+        </section>
+
+    </main>
+
+
+    <footer>
+
+        <div>
+            <strong>YASNA DEHGHANI</strong>
+            <p>Photography & Visual Stories</p>
+        </div>
+
+        <p>© 2026 Yasna Dehghani</p>
+
+    </footer>
+<script>
+function openMenu() {
+    document.getElementById("sidePanel").classList.add("active");
+    document.getElementById("menuOverlay").classList.add("active");
+}
+
+function closeMenu() {
+    document.getElementById("sidePanel").classList.remove("active");
+    document.getElementById("menuOverlay").classList.remove("active");
+}
+</script>
+
+</body>
+</html>

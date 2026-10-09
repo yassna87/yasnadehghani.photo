@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>عکاسی غذا | یسنا دهقانی</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<header>
+    <div class="logo">YASNA</div>
+
+    <nav>
+        <a href="index.html">خانه</a>
+        <a href="portfolio.html">نمونه‌کارها</a>
+        <a href="about.html">درباره من</a>
+        <a href="contact.html">تماس</a>
+    </nav>
+</header>
+
+<section class="project-header">
+    <span>05 — FOOD PHOTOGRAPHY</span>
+    <h1>عکاسی غذا</h1>
+    <p>ثبت رنگ، بافت و جزئیات خوشمزه‌ی غذاها در قاب تصویر.</p>
+</section>
+
+<section class="gallery">
+
+    <div class="gallery-item" data-title="FOOD">
+        <img src="images/food/food-01.jpg" alt="Food 01">
+    </div>
+
+    <div class="gallery-item" data-title="FOOD">
+        <img src="images/food/food-02.jpg" alt="Food 02">
+    </div>
+
+    <div class="gallery-item" data-title="FOOD">
+        <img src="images/food/food-03.jpg" alt="Food 03">
+    </div>
+
+    <div class="gallery-item" data-title="FOOD">
+        <img src="images/food/food-04.jpg" alt="Food 04">
+    </div>
+
+    <div class="gallery-item" data-title="FOOD">
+        <img src="images/food/food-05.jpg" alt="Food 05">
+    </div>
+
+    <div class="gallery-item" data-title="FOOD">
+        <img src="images/food/food-06.jpg" alt="Food 06">
+    </div>
+
+</section>
+
+<div class="back-link">
+    <a href="portfolio.html">← بازگشت به نمونه‌کارها</a>
+</div>
+
+<footer>
+    <p>© 2026 Yasna Dehghani</p>
+</footer>
+
+</body><!-- LIGHTBOX -->
+<div class="lightbox" id="lightbox">
+    <button class="lightbox-close" id="lightboxClose">&times;</button>
+    <button class="lightbox-prev" id="lightboxPrev">&#10094;</button>
+    <img id="lightboxImage" src="" alt="نمایش عکس">
+    <button class="lightbox-next" id="lightboxNext">&#10095;</button>
+</div>
+
+<script>
+(function () {
+    const galleryImages = Array.from(
+        document.querySelectorAll('.gallery-item img')
+    );
+
+    const lightbox = document.getElementById('lightbox');
+    const lightboxImage = document.getElementById('lightboxImage');
+    const closeButton = document.getElementById('lightboxClose');
+    const prevButton = document.getElementById('lightboxPrev');
+    const nextButton = document.getElementById('lightboxNext');
+
+    if (!lightbox || galleryImages.length === 0) return;
+
+    let currentIndex = 0;
+
+    function showImage(index) {
+        currentIndex = (index + galleryImages.length) % galleryImages.length;
+        lightboxImage.src = galleryImages[currentIndex].src;
+        lightboxImage.alt = galleryImages[currentIndex].alt;
+    }
+
+    galleryImages.forEach((img, index) => {
+        img.style.cursor = 'pointer';
+
+        img.addEventListener('click', function () {
+            showImage(index);
+            lightbox.classList.add('active');
+            document.body.classList.add('lightbox-open');
+        });
+    });
+
+    function closeLightbox() {
+        lightbox.classList.remove('active');
+        document.body.classList.remove('lightbox-open');
+    }
+
+    closeButton.addEventListener('click', closeLightbox);
+
+    prevButton.addEventListener('click', function () {
+        showImage(currentIndex - 1);
+    });
+
+    nextButton.addEventListener('click', function () {
+        showImage(currentIndex + 1);
+    });
+
+    lightbox.addEventListener('click', function (event) {
+        if (event.target === lightbox) {
+            closeLightbox();
+        }
+    });
+
+    document.addEventListener('keydown', function (event) {
+        if (!lightbox.classList.contains('active')) return;
+
+        if (event.key === 'Escape') closeLightbox();
+        if (event.key === 'ArrowRight') showImage(currentIndex + 1);
+        if (event.key === 'ArrowLeft') showImage(currentIndex - 1);
+    });
+})();
+</script>
+
+</html>
